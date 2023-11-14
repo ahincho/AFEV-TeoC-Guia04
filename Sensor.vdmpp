@@ -1,0 +1,36 @@
+/**
+  Sensor.
+  <p>
+    Sensor Class.
+    A simple Sensor.
+  </p>
+  @version 1.0
+  @author Angel Hincho Jove
+*/
+
+class Sensor
+
+types
+	
+	public SensorId = token;
+	public Metal = <Plumb> | <Mercury> | <Cadmium> | <Chromium>;
+	
+instance variables
+	
+	public sensorId : SensorId;
+	public measurements : map Metal to real;
+	
+operations
+
+	-- Constructor for Sensor Class
+	public Sensor: SensorId * map Metal to real ==> Sensor
+	Sensor(s, m) == (
+		sensorId := s;
+		measurements := m;
+	);
+
+functions
+	
+	-- No functions defined yet
+	
+end Sensor
