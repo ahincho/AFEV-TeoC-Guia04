@@ -1,0 +1,28 @@
+/**
+  System.
+  <p>
+    System Class.
+  </p>
+  @version 1.0
+  @author Angel Hincho Jove
+*/
+
+class System
+
+instance variables
+	
+	monitors : seq of Monitor;
+	
+operations
+	
+	-- Constructor for System Class
+	public System: seq of Monitor ==> System
+	System(m) == (
+		monitors := m;
+	);
+	
+functions
+	
+	-- No functions defined yet
+	
+end System
