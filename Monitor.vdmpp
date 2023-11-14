@@ -1,0 +1,48 @@
+/**
+  Monitor.
+  <p>
+    Monitor Class
+  </p>
+  @version 1.0
+  @author Angel Hincho Jove
+*/
+
+class Monitor
+
+types
+	
+	public MonitorId = token;
+	
+	public Risk ::
+		sensorId : Sensor`SensorId
+		date : Date;
+	
+	public Date ::
+		day : nat1
+		month : nat1
+		year : nat1;
+	
+	public Zone = <Arequipa> | <Camana> | <Caraveli> | <Caylloma> | <Condesuyos> | <Islay> | <Union>
+	
+instance variables
+	
+	public monitorId : MonitorId;
+	public sensors : seq of Sensor;
+	public risks : seq of Risk;
+	public zone : Zone;
+	
+operations
+	
+	-- Constructor for Monitor Class
+	public Monitor: monitorId * seq of Sensor * Zone ==> Monitor
+	Monitor(mId, s, z) == (
+		monitorId := mId;
+		sensor := s;
+		zone := z;
+	);
+	
+functions
+		
+	-- No functions defined yet
+	
+end Monitor
