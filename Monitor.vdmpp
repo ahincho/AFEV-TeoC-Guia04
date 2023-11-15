@@ -34,10 +34,10 @@ instance variables
 operations
 	
 	-- Constructor for Monitor Class
-	public Monitor: monitorId * seq of Sensor * Zone ==> Monitor
+	public Monitor: MonitorId * seq of Sensor * Zone ==> Monitor
 	Monitor(mId, s, z) == (
 		monitorId := mId;
-		sensor := s;
+		sensors := s;
 		zone := z;
 	);
 	

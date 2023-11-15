@@ -1,0 +1,38 @@
+class Test
+
+types
+
+public MonitorId = token;
+public SensorId = token;
+public Metal = <Plumb> | <Mercury> | <Cadmium> | <Chromium>;
+public Zone = <Arequipa> | <Camana> | <Caraveli> | <Caylloma> | <Condesuyos> | <Islay> | <Union>;
+
+instance variables
+
+monitor1: Monitor;
+
+operations
+
+public runTests: () ==> bool
+runTests() == return testMonitor() and testSensor() and testSystem();
+
+public testMonitor: () ==> bool
+testMonitor() == (
+    dcl m: Monitor := new Monitor(mk_token("testTokenMonitor"), [], <Arequipa>);
+    return m.monitorId = mk_token("testTokenMonitor") and len m.sensors = 0 and m.zone = <Arequipa>;
+);
+
+public testSensor: () ==> bool
+testSensor() == (
+    dcl s: Sensor := new Sensor(mk_token("testTokenSensor"), {<Plumb> |-> 0.0, <Mercury> |-> 0.0, <Cadmium> |-> 0.0, <Chromium> |-> 0.0});
+    return s.sensorId = mk_token("testTokenSensor") and card dom s.measurements = 4;
+);
+
+public testSystem: () ==> bool
+testSystem() == (
+    dcl m: Monitor := new Monitor(mk_token("testTokenMonitor"), [], <Arequipa>);
+    dcl s: System := new System([m]);
+    return (len s.monitors) = 1;
+);
+
+end Test

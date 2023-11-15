@@ -11,7 +11,7 @@ class System
 
 instance variables
 	
-	monitors : seq of Monitor;
+	public monitors : seq of Monitor;
 	
 operations
 	
